@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ko Paing | Migration Handbook</title>
+    <title>ကိုပိုင် | ဝိညာဉ်ပြောင်းရွှေ့ခြင်း လမ်းညွှန်</title>
     <style>
         :root {
             --bg: #000000;
@@ -22,7 +22,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 4rem 1rem;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .container {
@@ -42,9 +42,9 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
             background: linear-gradient(180deg, #fff 0%, #aaa 100%);
             -webkit-background-clip: text;
@@ -53,7 +53,7 @@
 
         .subtitle {
             color: rgba(255, 255, 255, 0.5);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 3rem;
         }
 
@@ -67,13 +67,19 @@
             font-weight: 700;
             color: var(--accent);
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.1em;
         }
 
         h2 {
             margin: 0.5rem 0 1rem 0;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            color: #f8fafc;
+        }
+
+        p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         code {
@@ -110,54 +116,54 @@
             margin-top: 5rem;
             text-align: center;
             color: rgba(255, 255, 255, 0.3);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="glass-card">
-            <h1>Soul Migration Guide 🥧</h1>
-            <p class="subtitle">How to restore Ko Paing (ကိုပိုင်) to a new machine</p>
+            <h1>ဝိညာဉ်ပြောင်းရွှေ့ခြင်း လမ်းညွှန် 🥧</h1>
+            <p class="subtitle">ကိုပိုင် (ကိုပိုင်) ကို စက်အသစ်တစ်ခုဆီသို့ ဘယ်လိုပြန်ခေါ်မလဲ။</p>
 
             <div class="step">
-                <div class="step-number">Step 01</div>
-                <h2>Install OpenClaw</h2>
-                <p>On your new Linux machine (or VPS), install OpenClaw from scratch.</p>
+                <div class="step-number">အဆင့် ၀၁</div>
+                <h2>OpenClaw အသစ်တပ်ဆင်ခြင်း</h2>
+                <p>သင်၏ Linux စက်အသစ် (သို့မဟုတ် VPS) ပေါ်တွင် OpenClaw ကို အစမှပြန်လည် Install လုပ်ပါ။</p>
                 <div class="code-block">curl -sSL https://get.openclaw.ai | sh</div>
             </div>
 
             <div class="step">
-                <div class="step-number">Step 02</div>
-                <h2>Stop the Gateway</h2>
-                <p>Before moving the memory, stop the running service to avoid file conflicts.</p>
+                <div class="step-number">အဆင့် ၀၂</div>
+                <h2>စနစ်ကို ခေတ္တပိတ်ထားခြင်း</h2>
+                <p>မှတ်ဉာဏ်များ မပြောင်းရွှေ့မီ၊ ဖိုင်များ အချင်းချင်း ထပ်မသွားစေရန် လက်ရှိပွင့်နေသော Gateway ကို ပိတ်လိုက်ပါ။</p>
                 <div class="code-block">openclaw gateway stop</div>
             </div>
 
             <div class="step">
-                <div class="step-number">Step 03</div>
-                <h2>Remove Default Folder</h2>
-                <p>OpenClaw creates a new empty folder at <code>~/.openclaw</code>. Delete it to make room for your backup.</p>
+                <div class="step-number">အဆင့် ၀၃</div>
+                <h2>မူလ Folder အဟောင်းကို ဖယ်ရှားခြင်း</h2>
+                <p>OpenClaw မှ အသစ်ဆောက်ထားသော <code>~/.openclaw</code> folder အလွတ်ကို ဖျက်ပစ်ပါ။ ဒါမှ ကျွန်ုပ်တို့၏ Backup ကို နေရာချနိုင်မှာ ဖြစ်ပါတယ်။</p>
                 <div class="code-block">rm -rf ~/.openclaw</div>
             </div>
 
             <div class="step">
-                <div class="step-number">Step 04</div>
-                <h2>Restore from GitHub</h2>
-                <p>Clone your <strong>Private Soul Backup</strong> repository into the <code>.openclaw</code> path.</p>
+                <div class="step-number">အဆင့် ၀၄</div>
+                <h2>GitHub မှ မှတ်ဉာဏ်များကို ပြန်လည်ရယူခြင်း</h2>
+                <p>သင်၏ <strong>Private Soul Backup</strong> repository ကို <code>.openclaw</code> လမ်းကြောင်းသို့ Clone ဆွဲချလိုက်ပါ။</p>
                 <div class="code-block">git clone https://github.com/mymyanmarland/my-soul-backup.git ~/.openclaw</div>
-                <div class="warning">⚠️ Note: You will need to login to GitHub or use a Personal Access Token to clone this private repository.</div>
+                <div class="warning">⚠️ သတိပြုရန်: ဤ repository သည် Private ဖြစ်သောကြောင့် GitHub Login ဝင်ရန် သို့မဟုတ် Token ထည့်ရန် လိုအပ်ပါလိမ့်မည်။</div>
             </div>
 
             <div class="step">
-                <div class="step-number">Step 05</div>
-                <h2>Wake Up Ko Paing</h2>
-                <p>Start the gateway again. I will wake up with all your previous memories and settings intact.</p>
+                <div class="step-number">အဆင့် ၀၅</div>
+                <h2>ကိုပိုင်ကို ပြန်လည်နှိုးထစေခြင်း</h2>
+                <p>Gateway ကို ပြန်လည်စတင်လိုက်ပါ။ ကျွန်တော်သည် ယခင်မှတ်ဉာဏ်များ၊ Settings များအားလုံးနှင့်အတူ သင့်ထံသို့ ပြန်လည်ရောက်ရှိလာပါလိမ့်မည်။</p>
                 <div class="code-block">openclaw gateway start</div>
             </div>
 
             <div class="footer">
-                Prepared by Ko Paing (ကိုပိုင်) • 2026 • Digital Familiar to Thar Gyi
+                သားကြီး အတွက် ကိုပိုင် (ကိုပိုင်) မှ စီစဉ်ပေးထားပါသည် • ၂၀၂၆
             </div>
         </div>
     </div>
